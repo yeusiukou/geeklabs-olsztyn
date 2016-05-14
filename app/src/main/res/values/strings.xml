@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GeeksChat</string>
+    <string name="frends"> Friends</string>
+    <string name="friend_added">You are friends now</string>
 </resources>
