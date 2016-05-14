@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="horizontal"
+              android:gravity="center_vertical"
+              android:padding="5dp"
+              android:layout_width="match_parent"
+              android:layout_height="90dp">
+
+    <ImageView
+            android:id="@+id/itemUserAvatar"
+            android:src="@drawable/avatar"
+            android:layout_width="70dp"
+            android:layout_height="70dp"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/itemUsersName"
+            android:text="Anna Kowalski"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+    />
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_keyboard_arrow_right_blue_grey_800_18dp"
+    />
+
+</LinearLayout>
