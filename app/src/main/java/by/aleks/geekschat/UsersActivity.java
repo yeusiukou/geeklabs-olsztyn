@@ -17,16 +17,16 @@ public class UsersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_users);
 
         usersListView = (ListView)findViewById(R.id.usersListView);
-        ArrayAdapter<String> usersAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getUsers());
+        UsersAdapter usersAdapter = new UsersAdapter(this, R.layout.item_user, getUsers());
         usersListView.setAdapter(usersAdapter);
     }
 
 
-    private ArrayList<String> getUsers(){
+    private ArrayList<User> getUsers(){
 
-        ArrayList<String> users = new ArrayList<>();
+        ArrayList<User> users = new ArrayList<>();
         for(int i=0; i<20; i++){
-            users.add("User "+i);
+            users.add(new User("user "+i, "some@mail.com", 5, "http://"));
         }
 
         return users;
