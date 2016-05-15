@@ -3,7 +3,8 @@
               android:gravity="center"
               android:orientation="horizontal"
               android:layout_width="match_parent"
-              android:layout_height="90dp">
+              android:layout_margin="5dp"
+              android:layout_height="100dp">
 
     <LinearLayout
             android:layout_width="wrap_content"
@@ -26,28 +27,30 @@
         />
     </LinearLayout>
 
-    <RelativeLayout
-            android:background="#8cc2df"
-            android:layout_width="wrap_content"
-            android:layout_height="90dp"
-            android:layout_weight="1"
-            android:layout_margin="15dp"
-            android:padding="8dp"
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            android:orientation="vertical"
+            android:background="#bddeea"
     >
         <TextView
-                android:id="@+id/messageText"
-                android:text="This is my first testing message"
-                android:textSize="18sp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:text="This is my first testing message"
+                android:textSize="20sp"
+                android:textColor="#000"
+                android:id="@+id/messageText"/>
 
         <TextView
-                android:id="@+id/messageTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15:23"
-                android:layout_alignParentBottom="true" android:layout_alignRight="@+id/messageText"
-                android:layout_alignEnd="@+id/messageText"/>
-    </RelativeLayout>
+                android:id="@+id/messageTime"
+                android:layout_gravity="right"
+                android:textSize="16sp"/>
+    </LinearLayout>
+
 
 </LinearLayout>

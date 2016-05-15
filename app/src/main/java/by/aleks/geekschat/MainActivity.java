@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import io.kimo.lib.faker.Faker;
 
@@ -34,6 +35,13 @@ public class MainActivity extends AppCompatActivity {
         friendsListView = (ListView)findViewById(R.id.mainList);
         UsersAdapter usersAdapter = new UsersAdapter(this, R.layout.item_user, getFriends());
         friendsListView.setAdapter(usersAdapter);
+        friendsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent chatIntent = new Intent(MainActivity.this, ChatActivity.class);
+                startActivity(chatIntent);
+            }
+        });
     }
 
     private ArrayList<User> getFriends(){
