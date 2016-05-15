@@ -20,12 +20,17 @@ public class UsersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_users);
 
         usersListView = (ListView)findViewById(R.id.usersListView);
-        UsersAdapter usersAdapter = new UsersAdapter(this, R.layout.item_user, getUsers());
+        final UsersAdapter usersAdapter = new UsersAdapter(this, R.layout.item_user, getUsers());
         usersListView.setAdapter(usersAdapter);
         usersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                User user = usersAdapter.getItem(i);
                 Intent profileIntent = new Intent(UsersActivity.this, ProfileActivity.class);
+                profileIntent.putExtra("name", user.getName());
+                profileIntent.putExtra("friendsNum", user.getFriendsNum());
+                profileIntent.putExtra("email", user.getEmail());
+                profileIntent.putExtra("imgSrc", user.getImgSrc());
                 startActivity(profileIntent);
             }
         });

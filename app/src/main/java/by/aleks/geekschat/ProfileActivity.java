@@ -23,6 +23,7 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        setTitle(getIntent().getStringExtra("name"));
 
         name = (TextView) findViewById(R.id.profileName);
         email = (TextView) findViewById(R.id.profileEmail);
@@ -30,9 +31,9 @@ public class ProfileActivity extends AppCompatActivity {
         avatar = (ImageView) findViewById(R.id.profileAvatar);
         addButton = (Button) findViewById((R.id.profileAddButton));
 
-        name.setText("Jorge Washington");
-        email.setText("moj@email.com");
-        friendNum.setText(String.valueOf(1));
+        name.setText(getIntent().getStringExtra("name"));
+        email.setText(getIntent().getStringExtra("email"));
+        friendNum.setText(String.valueOf(getIntent().getIntExtra("friendsNum", 0)));
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
