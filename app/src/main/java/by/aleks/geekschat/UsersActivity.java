@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import io.kimo.lib.faker.Faker;
 
 import java.util.ArrayList;
 
@@ -41,7 +42,7 @@ public class UsersActivity extends AppCompatActivity {
 
         ArrayList<User> users = new ArrayList<>();
         for(int i=0; i<20; i++){
-            users.add(new User("user "+i, "some@mail.com", 5, "http://"));
+            users.add(new User(Faker.with(this).Name.fullName(), Faker.Internet.email(), 5, Faker.Url.avatar()));
         }
 
         return users;

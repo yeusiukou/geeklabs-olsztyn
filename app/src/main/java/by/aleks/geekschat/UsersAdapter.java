@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class UsersAdapter extends ArrayAdapter<User> {
         ImageView avatar = (ImageView)convertView.findViewById(R.id.itemUserAvatar);
 
         name.setText(user.getName());
-        avatar.setImageDrawable(convertView.getResources().getDrawable(R.drawable.avatar));
+        Picasso.with(getContext()).load(user.getImgSrc()).into(avatar);
 
         return convertView;
     }

@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.squareup.picasso.Picasso;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -34,6 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
         name.setText(getIntent().getStringExtra("name"));
         email.setText(getIntent().getStringExtra("email"));
         friendNum.setText(String.valueOf(getIntent().getIntExtra("friendsNum", 0)));
+        Picasso.with(this).load(getIntent().getStringExtra("imgSrc")).into(avatar);
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
