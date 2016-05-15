@@ -1,7 +1,10 @@
 package by.aleks.geekschat;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -19,6 +22,13 @@ public class UsersActivity extends AppCompatActivity {
         usersListView = (ListView)findViewById(R.id.usersListView);
         UsersAdapter usersAdapter = new UsersAdapter(this, R.layout.item_user, getUsers());
         usersListView.setAdapter(usersAdapter);
+        usersListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent profileIntent = new Intent(UsersActivity.this, ProfileActivity.class);
+                startActivity(profileIntent);
+            }
+        });
     }
 
 
