@@ -3,4 +3,6 @@
     <string name="frends">Friends</string>
     <string name="friend_added">You are friends now</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="my_friends">"My friends"</string>
+    <string name="input_placeholder">What do you want to say?</string>
 </resources>
