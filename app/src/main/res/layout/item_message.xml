@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:gravity="center"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="90dp">
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="90dp"
+            android:orientation="vertical"
+            android:gravity="center"
+    >
+        <ImageView
+                android:id="@+id/messageAvatar"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/avatar"
+        />
+        <TextView
+                android:id="@+id/messageName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anna"
+                android:textSize="16sp"
+        />
+    </LinearLayout>
+
+    <RelativeLayout
+            android:background="#8cc2df"
+            android:layout_width="wrap_content"
+            android:layout_height="90dp"
+            android:layout_weight="1"
+            android:layout_margin="15dp"
+            android:padding="8dp"
+    >
+        <TextView
+                android:id="@+id/messageText"
+                android:text="This is my first testing message"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/messageTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15:23"
+                android:layout_alignParentBottom="true" android:layout_alignRight="@+id/messageText"
+                android:layout_alignEnd="@+id/messageText"/>
+    </RelativeLayout>
+
+</LinearLayout>
